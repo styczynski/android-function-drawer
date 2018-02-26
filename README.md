@@ -18,6 +18,10 @@ It supports:
 
 The application was done with help of **Andengine** and Android Canvas.
 
+# Download
+
+Download and install *.apk* package via this button: [![Download][badge download]][link download latest]
+
 # Building
 
 The project contains **app** directory which can be imported into Eclipse via *import existing Android code*<br>
