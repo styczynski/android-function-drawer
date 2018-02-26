@@ -54,4 +54,4 @@ The repository contains Eclipse settings that may be changed for compilation for
 
 [screenshot3]: https://raw.githubusercontent.com/styczynski/android-function-drawer/master/static/screenshot3.png
 
-[link download latest]: https://github.com/styczynski/bash-universal-tester/archive/1.9.5.zip
+[link download latest]: https://github.com/styczynski/android-function-drawer/raw/master/apk/AndroidFunctionDrawer.apk
