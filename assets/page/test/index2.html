@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=624">
+
+<title>MathQuill Demo</title>
+
+<link rel="stylesheet" type="text/css" href="support/home.css">
+<link rel="stylesheet" type="text/css" href="../build/mathquill.css">
+
+<style type="text/css">
+code span {
+  font: 90% Verdana, sans-serif;
+}
+#codecogsimg {
+  vertical-align: middle;
+  border: none;
+}
+.mathquill-textbox {
+  width: 100%;
+}
+#html-source {
+  display: none;
+  font-size: 90%;
+  white-space: pre-wrap;
+}
+.mathquill-rendered-math .mathquill-editable {
+  min-width: 1cm;
+}
+#container {  
+margin: 100px auto;  
+width: 688px;  
+}  
+#keyboard {  
+margin: 0;  
+padding: 0;  
+list-style: none;  
+}  
+    #keyboard li {  
+    float: left;  
+    margin: 0 5px 5px 0;  
+    width: 40px;  
+    height: 40px;  
+    line-height: 40px;  
+    text-align: center;  
+    background: #fff;  
+    border: 1px solid #f9f9f9;  
+    -moz-border-radius: 5px;  
+    -webkit-border-radius: 5px;  
+    }  
+        .capslock, .tab, .left-shift {  
+        clear: left;  
+        }  
+            #keyboard .tab, #keyboard .delete {  
+            width: 70px;  
+            }  
+            #keyboard .capslock {  
+            width: 80px;  
+            }  
+            #keyboard .return {  
+            width: 77px;  
+            }  
+            #keyboard .left-shift {  
+            width: 95px;  
+            }  
+            #keyboard .rightright-shift {  
+            width: 109px;  
+            }  
+        .lastitem {  
+        margin-right: 0;  
+        }  
+        .uppercase {  
+        text-transform: uppercase;  
+        }  
+        #keyboard .space {  
+        clear: left;  
+        width: 681px;  
+        }  
+        .on {  
+        display: none;  
+        }  
+        #keyboard li:hover {  
+        position: relative;  
+        top: 1px;  
+        left: 1px;  
+        border-color: #e5e5e5;  
+        cursor: pointer;  
+        }  
+</style>
+
+</head>
+<body>
+
+<p><span id="editable-math" style="position: fixed;" class="mathquill-editable">\frac{d}{dx}\sqrt{x}=</span></p>
+
+
+
+<script type="text/javascript" src="support/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../build/mathquill.js"></script>
+<!--<script type="text/javascript" src="../build/sendkeys.js"></script>-->
+
+<script type="text/javascript" src="../build/simulate.js"></script>
+<script type="text/javascript" src="../build/simulate_ext.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.key-sequence.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.key-combo.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.ext.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.drag-n-drop.js"></script>
+
+
+<script>
+
+	
+	
+function printTree(html) {
+  html = html.match(/<[a-z]+|<\/[a-z]+>|./ig);
+  if (!html) return '';
+  var indent = '\n', tree = [];
+  for (var i = 0; i < html.length; i += 1) {
+    var token = html[i];
+    if (token.charAt(0) === '<') {
+      if (token.charAt(1) === '/') { //dedent on close tag
+        indent = indent.slice(0,-2);
+        if (html[i+1] && html[i+1].slice(0,2) === '</') //but maintain indent for close tags that come after other close tags
+          token += indent.slice(0,-2);
+      }
+      else { //indent on open tag
+        tree.push(indent);
+        indent += '  ';
+      }
+
+      token = token.toLowerCase();
+    }
+
+    tree.push(token);
+  }
+  return tree.join('').slice(1);
+}
+</script>
+
+</body>
+</html>

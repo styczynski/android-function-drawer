@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/function_panel_color_menu_disable_function"
+       	android:title="Enable/Disable function" />
+    <item android:id="@+id/function_panel_color_menu_edit_color"
+   		android:title="Edit color" />
+    <item android:id="@+id/function_panel_color_menu_edit_equation"
+   		android:title="Edit equation" />
+</menu>

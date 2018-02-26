@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=624">
+
+<title>MathQuill Demo</title>
+
+<link rel="stylesheet" type="text/css" href="support/home.css">
+<link rel="stylesheet" type="text/css" href="../build/mathquill.css">
+
+<style type="text/css">
+	code span {
+		font: 90% Verdana, sans-serif;
+	}
+	#codecogsimg {
+		vertical-align: middle;
+		border: none;
+	}
+	.mathquill-textbox {
+		width: 100%;
+	}
+	#html-source {
+		display: none;
+		font-size: 90%;
+		white-space: pre-wrap;
+	}
+	.mathquill-rendered-math .mathquill-editable {
+		min-width: 1cm;
+	}
+	#editable-math {
+		position:absolute;
+		top:0px;
+		left:5px;
+		font-size:200%;
+	}
+	#container, #functionpad {  
+		margin: 100px auto;  
+		width: 688px;  
+	}  
+	#functionpad, #arrowpad {
+		list-style: none; 
+	}
+	#keyboard {  
+		margin: 0;  
+		padding: 0;  
+		list-style: none;  
+	}  
+	#keyboard li {  
+		float: left;  
+		margin: 0 2px 2px 0;  
+		width: 28px;  
+		height: 28px;  
+		line-height: 40px;  
+		text-align: center;  
+		background: #787878;
+		color:#E0E0E0;
+		border: 1px solid #404040;
+		border-radius:5px;
+		-moz-border-radius: 5px;  
+		-webkit-border-radius: 5px;  
+	}  
+	#arrowpad li, #functionpad li {  
+		float: left;  
+		margin: 0 5px 5px 0;  
+		width: 40px;  
+		height: 40px;  
+		line-height: 40px;  
+		text-align: center;  
+		background: #787878;
+		color:#E0E0E0;
+		border: 1px solid #404040;
+		border-radius:15px;
+		-moz-border-radius: 5px;  
+		-webkit-border-radius: 5px;  
+	}  
+	.capslock, .tab, .left-shift {  
+		clear: left;  
+	}  
+	#keyboard .tab, #keyboard .delete {  
+		width: 70px;  
+	}  
+	#keyboard .capslock {  
+		width: 80px;  
+	}  
+	#keyboard .return {  
+		width: 77px;  
+	}  
+	#keyboard .left-shift {  
+		width: 95px;  
+	}
+	#keyboard .functions {  
+		width: 95px;  
+	}  
+	#keyboard .rightright-shift {  
+		width: 109px;  
+	}  
+	.lastitem {  
+		margin-right: 0;  
+	}  
+	.uppercase {  
+		text-transform: uppercase;  
+	}  
+	.on {  
+		display: none;  
+	}  
+	#keyboard li:hover {  
+		position: relative;  
+		top: 1px;  
+		left: 1px;  
+		border-color: #181818;  
+		cursor: pointer;  
+		background-color: #E0E0E0;
+		color:#000000;
+	} 
+	
+	#arrowpad li:hover {  
+		border-color: #181818;  
+		cursor: pointer;  
+		background-color: #E0E0E0;
+		color:#000000;
+	}
+	
+	#functionpad li:hover {  
+		border-color: #181818;  
+		cursor: pointer;  
+		background-color: #E0E0E0;
+		color:#000000;
+	}
+	
+	#arrowpad .up-arrow, #arrowpad .up-arrow:hover {
+		position: relative;  
+		top: -50px;  
+		left: -94px;
+	}
+	
+	#arrowpad {
+		position:fixed;
+		bottom:5%;
+		right:5%;
+	}
+	
+	.function_eq {
+		pointer-events: none;
+	}
+	
+	.function_eq_latex {
+		pointer-events: none;
+		display:none;
+	}
+</style>
+
+</head>
+<body>
+
+<p><span id="editable-math" style="position: fixed;" class="mathquill-editable">\frac{d}{dx}\sqrt{x}=</span></p>
+
+<div id="examples">
+	<ul class="key keyboard" id="functionpad">
+		<li class="key function"><span class="function_eq_latex">\frac{}{}</span><span class="function_eq mathquill-embedded-latex">\frac{x}{y}</span></li>
+		<li class="key function"><span class="function_eq_latex">\sqrt{}</span><span class="function_eq mathquill-embedded-latex">\sqrt{x}</span></li>
+		<li class="key function"><span class="function_eq_latex">\sqrt[]{}</span><span class="function_eq mathquill-embedded-latex">\sqrt[x]{y}</span></li>
+		<li class="key function"><span class="function_eq_latex">{}^{}</span><span class="function_eq mathquill-embedded-latex">{x}^{y}</span></li>
+		<li class="key function"><span class="function_eq_latex">\log_{ }{ }</span><span class="function_eq mathquill-embedded-latex">\log_{x}{y}</span></li>
+		<li class="key function"><span class="function_eq_latex">\ln{}</span><span class="function_eq mathquill-embedded-latex">\ln{x}</span></li>
+		<li class="key function"><span class="function_eq_latex">\frac{d}{dx}</span><span class="function_eq mathquill-embedded-latex">\frac{d}{dx}</span></li>
+		<li class="key function"><span class="function_eq_latex">{\sum_{i=1}{}}^{0}</span><span class="function_eq mathquill-embedded-latex">\sum</span></li>
+	</ul>
+</div>
+ 
+ 
+<div class="key" id="container">  
+
+
+    <ul class="key keyboard" id="keyboard">
+		<!--<li class="key functions_list">functions</li>-->
+		<br><br><br>
+		<li class="key function"><span class="function_eq_latex">=</span><span class="function_eq mathquill-embedded-latex">=</span></li>
+		<li class="key function"><span class="function_eq_latex">+</span><span class="function_eq mathquill-embedded-latex">+</span></li>
+		<li class="key function"><span class="function_eq_latex">-</span><span class="function_eq mathquill-embedded-latex">-</span></li>
+		<li class="key function"><span class="function_eq_latex">*</span><span class="function_eq mathquill-embedded-latex">*</span></li>
+		<li class="key function"><span class="function_eq_latex">)</span><span class="function_eq mathquill-embedded-latex">)</span></li>
+		<li class="key function"><span class="function_eq_latex">(</span><span class="function_eq mathquill-embedded-latex">(</span></li>
+		<li class="key function"><span class="function_eq_latex">]</span><span class="function_eq mathquill-embedded-latex">]</span></li>
+		<li class="key function"><span class="function_eq_latex">[</span><span class="function_eq mathquill-embedded-latex">[</span></li> 
+		 <li class="key letter lastitem">clear</li>  
+		<br><br>
+		
+        <li class="key symbol"><span class="off">'</span><span class="on">~</span></li>  
+        <li class="key symbol"><span class="off">1</span><span class="on">!</span></li>  
+        <li class="key symbol"><span class="off">2</span><span class="on">@</span></li>  
+        <li class="key symbol"><span class="off">3</span><span class="on">#</span></li>  
+        <li class="key symbol"><span class="off">4</span><span class="on">$</span></li>  
+        <li class="key symbol"><span class="off">5</span><span class="on">%</span></li>  
+        <li class="key symbol"><span class="off">6</span><span class="on">^</span></li>  
+        <li class="key symbol"><span class="off">7</span><span class="on">&amp;</span></li>  
+        <li class="key symbol"><span class="off">8</span><span class="on">*</span></li>  
+        <li class="key symbol"><span class="off">9</span><span class="on">(</span></li>  
+        <li class="key symbol"><span class="off">0</span><span class="on">)</span></li>  
+        <li class="key symbol"><span class="off">-</span><span class="on">_</span></li>  
+        <li class="key symbol"><span class="off">=</span><span class="on">+</span></li>  
+        <li class="key delete lastitem">delete</li>  
+        <li class="key tab">tab</li>  
+        <li class="key letter">q</li>  
+        <li class="key letter">w</li>  
+        <li class="key letter">e</li>  
+        <li class="key letter">r</li>  
+        <li class="key letter">t</li>  
+        <li class="key letter">y</li>  
+        <li class="key letter">u</li>  
+        <li class="key letter">i</li>  
+        <li class="key letter">o</li>  
+        <li class="key letter">p</li>  
+        <li class="key symbol"><span class="off">[</span><span class="on">{</span></li>  
+        <li class="key symbol"><span class="off">]</span><span class="on">}</span></li>  
+        <li class="key symbol lastitem"><span class="off">\</span><span class="on">|</span></li>  
+        <li class="key capslock">caps lock</li>  
+        <li class="key letter">a</li>  
+        <li class="key letter">s</li>  
+        <li class="key letter">d</li>  
+        <li class="key letter">f</li>  
+        <li class="key letter">g</li>  
+        <li class="key letter">h</li>  
+        <li class="key letter">j</li>  
+        <li class="key letter">k</li>  
+        <li class="key letter">l</li>  
+        <li class="key symbol"><span class="off">;</span><span class="on">:</span></li>  
+        <li class="key symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+        <li class="key return">return</li>  
+        <li class="key left-shift">shift</li>  
+        <li class="key letter">z</li>  
+        <li class="key letter">x</li>  
+        <li class="key letter">c</li>  
+        <li class="key letter">v</li>  
+        <li class="key letter">b</li>  
+        <li class="key letter">n</li>  
+        <li class="key letter">m</li>  
+        <li class="key symbol"><span class="off">,</span><span class="on">&lt;</span></li>  
+        <li class="key symbol"><span class="off">.</span><span class="on">&gt;</span></li>  
+        <li class="key symbol"><span class="off">/</span><span class="on">?</span></li>  
+        <li class="key right-shift lastitem">shift</li>  
+    </ul>  
+
+	<ul class="key keyboard" id="arrowpad">
+		<li class="key left-arrow">&#8592;</li>  
+		<li class="key down-arrow">&#8595;</li> 
+		<li class="key right-arrow">&#8594;</li>  
+		<li class="key up-arrow lastitem">&#8593;</li>
+	</ul>
+	
+</div> 
+
+<script type="text/javascript" src="support/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../build/mathquill.js"></script>
+<!--<script type="text/javascript" src="../build/sendkeys.js"></script>-->
+
+<script type="text/javascript" src="../build/simulate.js"></script>
+<script type="text/javascript" src="../build/simulate_ext.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.key-sequence.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.key-combo.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.ext.js"></script>
+<script type="text/javascript" src="../build/jquery.simulate.drag-n-drop.js"></script>
+
+
+<script>
+
+	function contentChangedCallback() {
+		window.INTERFACE.processContent($('#editable-math').mathquill('latex'));
+	}
+ 
+	function init() {
+		latexMath.mathquill('write', character);
+		var e = jQuery.Event("keydown");
+		e.keyCode = 38;                     
+		latexMath.trigger(e);	
+		return false;
+	}
+    $(function(){  
+		var latexMath = $('#editable-math');
+		var wndw = $(window).width();
+		latexMath.click(function(e){
+			e.stopPropagation();
+		});
+	
+        var $write = $('#write'),  
+            shift = false,  
+            capslock = false;  
+        
+		//latexMath.css("left", ((wndw/3)-latexMath.width())+'px');
+			  
+        $('.keyboard li').click(function(){  
+            var $this = $(this),  
+                character = $this.html();
+			
+			if($this.hasClass('function')) {
+				character = $('.function_eq_latex', $(this)).html();
+			}
+			//latexMath.css("left", ((wndw/3)-latexMath.width())+'px');
+			  
+			  
+            if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) { 
+                $('.letter').toggleClass('uppercase'); 
+                $('.symbol span').toggle(); 
+                 
+                shift = (shift === true) ? false : true; 
+                capslock = false; 
+                return false; 
+            } 
+             
+            if ($this.hasClass('capslock')) { 
+                $('.letter').toggleClass('uppercase'); 
+                capslock = true; 
+                return false; 
+            } 
+             
+            if ($this.hasClass('delete')) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = 8;
+				latexMath.trigger(e);
+				contentChangedCallback();
+				return false; 
+            } 
+			
+			if($this.hasClass('left-arrow')) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = 37;                     
+				latexMath.trigger(e);		
+				return false;
+			}
+			
+			if($this.hasClass('right-arrow')) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = 39;                     
+				latexMath.trigger(e);		
+				return false;
+			}
+			
+			if($this.hasClass('up-arrow')) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = 38;                     
+				latexMath.trigger(e);		
+				return false;
+			}
+			
+			if($this.hasClass('down-arrow')) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = 40;                     
+				latexMath.trigger(e);		
+				return false;
+			}
+             
+            if ($this.hasClass('symbol')) character = $('span:visible', $this).html(); 
+            if ($this.hasClass('space')) character = ' '; 
+            if ($this.hasClass('tab')) character = "\t"; 
+            if ($this.hasClass('return')) character = "\n"; 
+			if(character == "\n") {
+				//alert(printTree(latexMath.mathquill('html')));
+				alert(latexMath.mathquill('latex'));
+				return false;
+			}
+             
+            if ($this.hasClass('uppercase')) character = character.toUpperCase(); 
+             
+            if (shift === true) { 
+                $('.symbol span').toggle(); 
+                if (capslock === false) $('.letter').toggleClass('uppercase');  
+                  
+                shift = false;  
+            }  
+              
+			
+			/*if(character == '\\') {
+				character = '\\frac';
+			}*/
+			
+			if(character == 'clear') {
+				latexMath.mathquill('latex', '{x}');
+				contentChangedCallback();
+				return false;
+			}
+			
+			latexMath.mathquill('write', character);
+			var e = jQuery.Event("keydown");
+			e.keyCode = 38;                     
+			latexMath.trigger(e);	
+			contentChangedCallback();
+			return false;
+        
+		});  
+    });  
+	
+	
+function printTree(html) {
+  html = html.match(/<[a-z]+|<\/[a-z]+>|./ig);
+  if (!html) return '';
+  var indent = '\n', tree = [];
+  for (var i = 0; i < html.length; i += 1) {
+    var token = html[i];
+    if (token.charAt(0) === '<') {
+      if (token.charAt(1) === '/') { //dedent on close tag
+        indent = indent.slice(0,-2);
+        if (html[i+1] && html[i+1].slice(0,2) === '</') //but maintain indent for close tags that come after other close tags
+          token += indent.slice(0,-2);
+      }
+      else { //indent on open tag
+        tree.push(indent);
+        indent += '  ';
+      }
+
+      token = token.toLowerCase();
+    }
+
+    tree.push(token);
+  }
+  return tree.join('').slice(1);
+}
+
+
+init();
+</script>
+
+</body>
+</html>

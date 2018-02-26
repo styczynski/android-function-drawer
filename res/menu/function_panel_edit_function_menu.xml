@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/file"
+          android:title="Common functions" >
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_sin"
+                  android:title="Sinus" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_cos"
+                  android:title="Cosinus" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_tan"
+                  android:title="Tangent" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_asin"
+                  android:title="Arcus sinus" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_acos"
+                  android:title="Arcus cosinus" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_atan"
+                  android:title="Arcus tangent" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_exp"
+                  android:title="Expotential function" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_log"
+                  android:title="Logarithmic function" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_log2"
+                  android:title="2-based logarithmic function" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_ln"
+                  android:title="Natural logarithm" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_abs"
+                  android:title="Absolute value" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_pow"
+                  android:title="Quadratic power of x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_xtower2"
+                  android:title="Power tower of order 2" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_xtower3"
+                  android:title="Power tower of order 3" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_xtower4"
+                  android:title="Power tower of order 4" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_x"
+                  android:title="Function f(x)=x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_linear"
+                  android:title="Linear function of x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_quadratic"
+                  android:title="Quadratic function of x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_xtower5"
+                  android:title="Power tower of order 5" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_sqrt"
+                  android:title="Square root" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_min"
+                  android:title="Minimum function" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_max"
+                  android:title="Maximum function" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_ceil"
+                  android:title="Ceil from x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_floor"
+                  android:title="Floor from x" />
+            <item android:id="@+id/function_panel_edit_function_menu_common_functions_round"
+                  android:title="Rounded x" />
+        </menu>
+    </item>
+</menu>

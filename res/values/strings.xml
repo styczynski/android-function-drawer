@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simple Function Drawer</string>
+    
+	<string-array name="pref_plotting_mode_entries">
+	    <item>Normal</item>
+	    <item>Swap X and Y</item>
+	    <item>Radial</item>
+	    <item>Normal not proportional</item>
+	</string-array>
+	
+	<string-array name="pref_plotting_mode_values">
+	    <item>default</item>
+	    <item>swap</item>
+	    <item>radial</item>
+	    <item>normalnprop</item>
+	</string-array>
+    
+</resources>

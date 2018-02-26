@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory 
+        android:title="Drawing options"
+        android:key="pref_drawing_options_category">
+	    <CheckBoxPreference
+	        android:key="pref_use_auto_step"
+	        android:title="Use automatic procedure of choosing graph quality."
+	        android:summary="Automatic graph quality adjecting."
+	        android:defaultValue="true" />
+	    <com.example.extremetic_tac_toe.EditFloatPreference
+	        android:key="pref_manual_step_value"
+	        android:title="Steps number used when plotting functions."
+	        android:summary="Function graphing steps number."
+	        android:numeric="decimal"
+	        android:defaultValue="50.0" />
+	    <com.example.extremetic_tac_toe.EditFloatPreference
+	        android:key="pref_ox_label_step"
+	        android:title="Number of labels on X axis."
+	        android:summary="X axis labels."
+	        android:numeric="integer"
+	        android:defaultValue="15" />
+	    <com.example.extremetic_tac_toe.EditFloatPreference
+	        android:key="pref_oy_label_step"
+	        android:title="Number of labels on Y axis."
+	        android:summary="Y axis labels."
+	        android:numeric="integer"
+	        android:defaultValue="15" />
+	</PreferenceCategory>
+	
+   	<PreferenceCategory 
+        android:title="Drawing options"
+        android:key="pref_plotting_options_category">
+	    <ListPreference
+            android:key="pref_plotting_mode"
+            android:defaultValue="Normal"
+            android:title="Cartesian plotting mode."
+            android:entries="@array/pref_plotting_mode_entries"
+    		android:entryValues="@array/pref_plotting_mode_values" />
+	    
+    </PreferenceCategory>
+    
+	<PreferenceCategory 
+	    android:key="pref_plotting_mode_advanced_settings"
+	    android:title="Plotting advanced settings">
+    </PreferenceCategory>
+    
+	 <PreferenceCategory 
+        android:title="Loading/saving settings"
+        android:key="pref_saving_category">
+	    
+	    <CheckBoxPreference 
+	        android:title="Auto file opening"
+	        android:summary="Open files always after saving is complete."
+        	android:key="pref_saving_open_file_when_done" />
+	    
+	    <CheckBoxPreference 
+	        android:title="Always clear cache."
+	        android:summary="Always remove all functions on startup."
+        	android:key="pref_saving_clear_cache_at_startup" />
+	        
+    </PreferenceCategory>
+    
+</PreferenceScreen>

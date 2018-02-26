@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+   
+  <!-- Screen Design for the SONGS -->
+
+    <Button
+        android:id="@+id/function_panel_function_prop_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+    <TextView
+        android:id="@+id/function_panel_function_prop_equation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Function Equation"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/function_panel_function_prop_equation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="..."
+        android:textSize="30dp" >
+
+        <requestFocus />
+    </TextView>
+
+    <ScrollView 
+    android:layout_height="wrap_content"  
+    android:id="@+id/scrollView1" 
+    android:layout_width="fill_parent">
+	    <TableLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	
+	        <TableRow
+	            android:id="@+id/tableRow1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_monotonic_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Monotonicity"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_monotonic_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="30dp"
+	                android:text="..."
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </TableRow>
+	
+	        <TableRow
+	            android:id="@+id/tableRow2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_injectionf_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Is injection function?"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_injectionf_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="30dp"
+	                android:text="..."
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </TableRow>
+	
+	        <TableRow
+	            android:id="@+id/tableRow3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_parity_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Function parity"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_parity_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="30dp"
+	                android:text="..."
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </TableRow>
+	
+	        <TableRow
+	            android:id="@+id/tableRow4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_roots_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Function roots"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_roots_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="30dp"
+	                android:text="..."
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </TableRow>
+	
+	        <TableRow
+	            android:id="@+id/tableRow5"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_fixed_points_text"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Function fixed points"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <TextView
+	                android:id="@+id/function_panel_function_props_fixed_points_value"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="30dp"
+	                android:text="..."
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </TableRow>
+	
+	    </TableLayout>
+	</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="25dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minimum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/function_value_range_set_dialog_minfield"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maximum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/function_value_range_set_dialog_maxfield"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bar step"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+    android:id="@+id/function_value_range_set_dialog_step_settings"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+	    <RadioButton
+	        android:id="@+id/function_value_range_set_dialog_step_setting_auto"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="30dp"
+	        android:text="Auto" />
+	
+	    <RadioButton
+	        android:id="@+id/function_value_range_set_dialog_step_setting_custom"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="30dp"
+	        android:text="Custom" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/function_value_range_set_dialog_stepfield"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+</LinearLayout>

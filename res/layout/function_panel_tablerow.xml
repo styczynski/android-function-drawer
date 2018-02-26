@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content" android:orientation="vertical"
+    android:layout_width="fill_parent">
+
+    <TableRow android:layout_width="fill_parent"
+              android:id="@+id/TableRow01"
+              android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/function_panel_tablerow_colorview"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <android.webkit.WebView
+            android:id="@+id/id"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/function_panel_tablerow_removebutton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="-25dp"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/btn_star" />
+
+        <ImageButton
+            android:id="@+id/function_panel_tablerow_propsbutton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:src="@android:drawable/btn_star" />
+
+    </TableRow>
+
+    <TableRow android:layout_height="wrap_content"
+              android:layout_width="fill_parent">
+
+    <TextView android:textColor="#FFFFFF" 
+                      android:id="@+id/categoryId"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:text="categoryId" 
+                      android:layout_weight="1" 
+                      android:height="20sp" />
+
+    <TextView android:layout_height="wrap_content"
+                      android:layout_width="fill_parent" 
+                      android:layout_weight="1"
+                      android:textColor="#FFFFFF"
+                      android:gravity="right"
+                      android:id="@+id/description"
+                      android:text="description" 
+                      android:height="20sp" />
+</TableRow>
+
+</TableLayout>
